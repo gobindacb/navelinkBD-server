@@ -13,7 +13,7 @@ const MeetGuides = () => {
         <div className="my-10">
             <div>
                 <h2 className="text-center">Meet our top rated guides</h2>
-                <p className="text-center">Meet our expert guides at Navigate BD, who bring local knowledge and passion <br /> to every tour. With their insights and personalized attention, you'll experience Bangladesh's culture,<br /> history, and natural beauty in a truly unique and memorable way.</p>
+                <p className="text-center">Meet our expert guides at Navigate BD, who bring local knowledge and passion <br /> to every tour. With their insights and personalized attention, your all experience Bangladeshis culture,<br /> history, and natural beauty in a truly unique and memorable way.</p>
             </div>
             <div className="flex justify-center flex-wrap gap-6 mt-8">
                 {
