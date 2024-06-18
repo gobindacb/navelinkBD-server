@@ -17,6 +17,8 @@ import AllGuides from "../pages/AllGuides";
 import AllPackages from "../pages/AllPackages";
 import AllStories from "../pages/AllStories";
 import PackageDetails from "../components/Packages/PackageDetails";
+import GuidesDetails from "../pages/GuidesDetails";
+import StoryDetails from "../pages/StoryDetails";
 
 
 
@@ -49,8 +51,18 @@ const router = createBrowserRouter([
             },
             {
                 path: '/packageDetails/:id',
-                element: <PackageDetails/>,
+                element: <PrivateRoute><PackageDetails/></PrivateRoute>,
                 loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/packages/${params.id}`)
+            },
+            {
+                 path: '/guideDetails/:id',
+                 element: <GuidesDetails/>,
+                 loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/guides/${params.id}`)   
+            },
+            {
+                path: '/storyDetails/:id',
+                element: <StoryDetails/>,
+                loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/story/${params.id}`)
             },
             {
                 path: '/allStories',

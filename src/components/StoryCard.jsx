@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const StoryCard = ({story}) => {
@@ -15,7 +16,7 @@ const StoryCard = ({story}) => {
             </div>
             <div>
                 <h3>{story.title}</h3>
-                <button className="btn bg-primary-color text-white font-semibold">Read full story</button>
+                <Link to={`/storyDetails/${story._id}`} className="btn bg-primary-color text-white font-semibold">Read full story</Link>
             </div>
             <div></div>
         </div>

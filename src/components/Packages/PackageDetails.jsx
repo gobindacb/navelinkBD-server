@@ -33,23 +33,23 @@ const PackageDetails = () => {
                         <h3>Cost:$ {cost}</h3>
                     </div>
                     <div className="flex justify-between mt-1 items-center">
-                            <ul className="menu bg-base-200 w-56 rounded-box">
-                                <li>
-                                    <details className="bg-red-200">
-                                        <summary>See all guides</summary>
-                                        <ul className="absolute bg-slate-300">
-                                            {
-                                                guides.map((guide, index) =>
-                                                    <li
+                        <ul className="menu bg-base-200 w-56 rounded-box">
+                            <li>
+                                <details className="bg-red-200">
+                                    <summary>See all guides</summary>
+                                    <ul className="absolute bg-slate-300">
+                                        {
+                                            guides.map((guide, index) =>
+                                                <li
                                                     key={guide._id}
-                                                    ><Link to='/'>{index+1}. {guide.name}</Link></li>
-                                                )
-                                            }
-                                            
-                                        </ul>
-                                    </details>
-                                </li>
-                            </ul>
+                                                ><Link to={`/guideDetails/${guide._id}`}>{index + 1}. {guide.name}</Link></li>
+                                            )
+                                        }
+
+                                    </ul>
+                                </details>
+                            </li>
+                        </ul>
                         <h3>Type: {type}</h3>
                     </div>
                     <div className="mt-20 ">
@@ -57,11 +57,16 @@ const PackageDetails = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-2">
-                <p>Details Tour Plan</p>
-                <p>{day.day1}</p>
-                <p className="mt-2">{day.day2}</p>
-                <p className="mt-2">{day.day3}</p>
+            <div className="grid grid-cols-1 md:grid-cols-12 mt-2">
+                <div className="mt-2 col-span-8">
+                    <h2>Details Tour Plan</h2>
+                    <p>{day.day1}</p>
+                    <p className="mt-2">{day.day2}</p>
+                    <p className="mt-2">{day.day3}</p>
+                </div>
+                <div className="col-span-4">
+                     <h2 className="text-center">Comments</h2>                   
+                </div>
             </div>
         </div>
     );
